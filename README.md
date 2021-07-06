@@ -26,9 +26,6 @@ To get started after cloning the repo and installing dependencies run:
 
 ## Authors
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
 Meg Shulmister
 [@codeLikeALady](https://twitter.com/codeLikeALady)
 [LinkedIn](https://www.linkedin.com/in/meganshulmister019/)
