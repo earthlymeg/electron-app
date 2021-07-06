@@ -1,0 +1,24 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "Electron Application built by Meg Shulmister",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha --reporter mocha-spectrum-reporter test",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron-reload": "^1.5.0",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {
+    "electron": "^13.1.5",
+    "electron-builder": "^22.11.7",
+    "mocha": "^9.0.2",
+    "mocha-spectrum-reporter": "^1.0.3",
+    "spectron": "^15.0.0"
+  }
+}
