@@ -1,8 +1,7 @@
 const Application = require('spectron').Application
 const assert = require('assert')
 const electronPath = require('electron') // Require Electron from the binaries included in node_modules.
-const path = require('path')
-
+const path = require('path');
 
 const app = new Application({
     path: electronPath,
@@ -22,18 +21,59 @@ describe('To Do List', function () {
         }
     });
 
-    it('shows an initial window', async () => {
+    xit('shows an initial window', async () => {
         const count = await app.client.getWindowCount();
         return assert.equal(count, 1);
     });
-    xit('has the correct title', async () => {
-     
-        // return assert.equal(title, 'To-Do List');
+    xit('Title renders To-Do List', async () => {
+
+        const title = await app.client.getTitle();
+        return assert.equal(title, 'To-Do List');
 
     });
 
+    //click add and window pops up
+    // it('Can access menu', async () => {
+    //     const app = await menuAddon.createApplication({ args: ['./'], path: electron }).start();
+    //     menuAddon.clickMenu('Electron');
+    //     await app.stop();
+    //   });
 
 
 
 });
 
+
+
+// describe('Add Window', function () {
+
+
+//     this.timeout(10000);
+
+//     beforeEach(() => {
+//         return app.start();
+//     });
+
+//     afterEach(() => {
+//         if (app && app.isRunning()) {
+//             return app.stop();
+//         }
+//     });
+
+
+//     //shows a window
+
+//     it('shows a window', async () => {
+           
+//     });
+
+//     it('renders a new to-do', async () => {
+           
+//     });
+
+//     it('deletes a to-do', async () => {
+           
+//     });
+
+
+// });   

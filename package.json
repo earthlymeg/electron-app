@@ -11,8 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.4",
     "electron-reload": "^1.5.0",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "spectron-menu-addon": "^0.4.1"
   },
   "devDependencies": {
     "electron": "^13.1.5",
