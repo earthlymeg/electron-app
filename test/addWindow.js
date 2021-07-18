@@ -42,15 +42,18 @@ describe('Add Window', function () {
     it('renders a new to-do', async () => {
        
        
-            // return app.client
-            //   .waitUntilWindowLoaded()
-            //   .keys('Hello')
-            //   .click('#add-item')
-            //   .getText('ul')
-            //   .then(text => expect(text).to.eq('Hello'))
-            //   .catch(err => console.log(err))
+        const input = await app.client.$('#item');
+        await input.setValue('test123')
+        const output = await input.getValue();
+        const button = await app.client.$('#add-item');
+        await button.click();
+        // const ul = await app.client.$(ul).then;
+        await app.client.$('ul').then(val => console.log(val));
 
+        //return assert.equal(output, 'test12345')
 
+    
+    
     });  
 
 

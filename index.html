@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>To-Do List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">    
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Piano</title>
 
 </head>
 <body>
-   
+<!--    
     <nav>
         <div class="nav-wrapper">
-            <a class="brand-logo center" id="title">To-Do List</a>
+            <a class="brand-logo center" id="title">Keyboard</a>
         </div>
+    </nav> -->
 
-    </nav>
+    <div class="piano">
+        <div data-note="C" class="key white"></div>
+        <div  data-note="C#" class="key black"></div>
+        <div  data-note="D" class="key white"></div>
+        <div  data-note="D#" class="key black"></div>
+        <div  data-note="E" class="key white"></div>
+        <div  data-note="F" class="key white"></div>
+        <div  data-note="F#" class="key black"></div>
+        <div  data-note="G" class="key white"></div>
+        <div  data-note="G#" class="key black"></div>
+        <div  data-note="A" class="key white"></div>
+        <div  data-note="Bb" class="key black"></div>
+        <div  data-note="B" class="key white"></div>
+      
+    </div>
+
+    <audio id="C" src="notes/notes_C.mp3"></audio>
+    <audio id="C#" src="notes/notes_Db.mp3"></audio>
+    <audio id="D" src="notes/notes_D.mp3"></audio>
+    <audio id="D#" src="notes/notes_Eb.mp3"></audio>
+    <audio id="E" src="notes/notes_E.mp3"></audio>
+    <audio id="F" src="notes/notes_F.mp3"></audio>
+    <audio id="F#" src="notes/notes_Gb.mp3"></audio>
+    <audio id="G" src="notes/notes_G.mp3"></audio>
+    <audio id="G#" src="notes/notes_Ab.mp3"></audio>
+    <audio id="A" src="notes/notes_A.mp3"></audio>
+    <audio id="Bb" src="notes/notes_Bb.mp3"></audio>
+    <audio id="B" src="notes/notes_B.mp3"></audio>
+
+
+
     <ul></ul>
+
     <script>
         const electron = require('electron');
         const {ipcRenderer} = electron; 
@@ -25,12 +59,8 @@
           const li = document.createElement('li');
           li.className = 'collection-item';
           const itemText = document.createTextNode(item);
-
-        //   const deleteButton = document.createElement('button');
-        //   deleteButton.className = 'btn-floating btn-small waves-effect waves-light red';
-        //   deleteButton.style.float = 'right';
+     
           li.appendChild(itemText); 
-        //   li.appendChild(deleteButton);  
           ul.appendChild(li);   
         })
 
@@ -49,6 +79,6 @@
                 ul.className = '';
             }
         }
-;    </script>
+;   </script>
 </body>
 </html>

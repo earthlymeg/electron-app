@@ -32,48 +32,7 @@ describe('To Do List', function () {
 
     });
 
-    //click add and window pops up
-    // it('Can access menu', async () => {
-    //     const app = await menuAddon.createApplication({ args: ['./'], path: electron }).start();
-    //     menuAddon.clickMenu('Electron');
-    //     await app.stop();
-    //   });
-
-
+   
 
 });
 
-
-
-// describe('Add Window', function () {
-
-
-//     this.timeout(10000);
-
-//     beforeEach(() => {
-//         return app.start();
-//     });
-
-//     afterEach(() => {
-//         if (app && app.isRunning()) {
-//             return app.stop();
-//         }
-//     });
-
-
-//     //shows a window
-
-//     it('shows a window', async () => {
-           
-//     });
-
-//     it('renders a new to-do', async () => {
-           
-//     });
-
-//     it('deletes a to-do', async () => {
-           
-//     });
-
-
-// });   
