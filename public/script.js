@@ -102,5 +102,7 @@ function recordNote(note) {
 }
 
 function saveSong() {
-    
+
+    //trigger database to save song 
+
 }
