@@ -104,5 +104,9 @@ function recordNote(note) {
 function saveSong() {
 
     //trigger database to save song 
+    axios.post('/songs', { songNotes: songNotes })
+    .then(res => {
+        console.log(res.data)
+    })
 
 }

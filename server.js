@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
     res.render('index');
 })
 
-//TODO
 
 app.post('/songs', async (req, res) => {
     const song = new Song({
