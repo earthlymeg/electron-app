@@ -6,6 +6,11 @@ const keys = document.querySelectorAll('.key');
 const whiteKeys = document.querySelectorAll('.key.white');
 const blackKeys = document.querySelectorAll('.key.black');
 
+const keyMap = [...keys].reduce((map, key) => {
+  map[key.dataset.note] = key;
+  return map
+}, {})
+
 let recordingStartTime; 
 let songNotes;
 
@@ -59,7 +64,15 @@ function stopRecording() {
 }
 
 function playSong() {
-    console.log(songNotes)
+
+    //loop through song notes and play in time recorded
+    if (songNotes.length === 0) return;
+    songNotes.forEach( note => {
+        setTimeout(() =>{
+          playNote(keyMap[note.key])
+        }, note.startTime)
+    })
+    
 }
 
 function playNote(key) {
