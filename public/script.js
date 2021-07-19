@@ -7,6 +7,7 @@ const saveButton = document.querySelector('.save-button');
 const keys = document.querySelectorAll('.key');
 const whiteKeys = document.querySelectorAll('.key.white');
 const blackKeys = document.querySelectorAll('.key.black');
+const songLink = document.querySelector('.song-link');
 
 const keyMap = [...keys].reduce((map, key) => {
   map[key.dataset.note] = key;
@@ -106,6 +107,8 @@ function saveSong() {
     //trigger database to save song 
     axios.post('/songs', { songNotes: songNotes })
     .then(res => {
+        songLink.classList.add('show');
+        songLink.href = `/songs/${res.data._id}`
         console.log(res.data)
     })
 

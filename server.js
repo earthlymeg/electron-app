@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Song = require('./models/song')
 const app = express();
 
-mongoose.connect('mongodb://localhose/songrecorder', {
+mongoose.connect('mongodb://localhost/songrecorder', {
     useNewUrlParser: true, useUnifiedTopology: true
 });
 
