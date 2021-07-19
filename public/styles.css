@@ -52,6 +52,7 @@ body {
 .btn {
   font-size: 1.5rem;
   text-decoration: none;
+  margin-right: 1rem;
 }
 
 .record-button {
@@ -60,4 +61,13 @@ body {
 
 .record-button.active {
   background-color: red;
+}
+
+.play-button,
+.save-button {
+  display: none;
+}
+
+.play-button.show, .save-button.show{
+  display: block;
 }

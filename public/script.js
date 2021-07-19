@@ -1,7 +1,9 @@
 const white_keys = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
 const black_keys = ['s', 'd', 'g', 'h', 'j'];
 
-const recordButton = document.querySelector('.record-button')
+const recordButton = document.querySelector('.record-button');
+const playButton = document.querySelector('.play-button');
+const saveButton = document.querySelector('.save-button');
 const keys = document.querySelectorAll('.key');
 const whiteKeys = document.querySelectorAll('.key.white');
 const blackKeys = document.querySelectorAll('.key.black');
@@ -20,7 +22,8 @@ keys.forEach(key => {
 
 
 recordButton.addEventListener('click', toggleRecording)
-
+saveButton.addEventListener('click', saveSong);
+playButton.addEventListener('click', playSong)
 
 document.addEventListener('keydown', e => {
 
@@ -56,11 +59,15 @@ function startRecording() {
     recordingStartTime = Date.now();
     // record song notes
     songNotes = [];
+    playButton.classList.remove('show');
+    saveButton.classList.remove('show');
 
 }
 
 function stopRecording() {
     playSong();
+    playButton.classList.add('show');
+    saveButton.classList.add('show');
 }
 
 function playSong() {
@@ -92,4 +99,8 @@ function recordNote(note) {
         key: note,
         startTime: Date.now() - recordingStartTime
     })
+}
+
+function saveSong() {
+    
 }
