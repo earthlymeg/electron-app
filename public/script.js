@@ -48,7 +48,7 @@ function startRecording() {
     //everytime someone plays a note, we will mark what time note is plated + which note
 
     //get start time
-    recordingStartTime = Date.now()''
+    recordingStartTime = Date.now();
     // record song notes
     songNotes = [];
 
@@ -59,18 +59,24 @@ function stopRecording() {
 }
 
 function playSong() {
-    console.log(songNoes)
+    console.log(songNotes)
 }
 
 function playNote(key) {
+    if (isRecording()) recordNote(key.dataset.note)
     const noteAudio = document.getElementById(key.dataset.note);
     noteAudio.currentTime = 0;
     noteAudio.play();
     key.classList.add('active');
-    console.log(key)
 
     noteAudio.addEventListener('ended', () => {
         key.classList.remove('active');
-        console.log(key)
+    })
+}
+
+function recordNote(note) {
+    songNotes.push({
+        key: note,
+        startTime: Date.now() - recordingStartTime
     })
 }
